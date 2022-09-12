@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:wght@100&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+html {
+  font-size: 15px;
+  position: relative;
+}
+html body {
+  font-family: "Poppins", sans-serif;
+  background: #c0392b; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8e44ad, #c0392b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+html body main {
+  padding-top: 150px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+html body main .bg-overlay-text {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 17rem;
+  opacity: 0.15;
+  z-index: -1;
+  color: white;
+  width: 100%;
+  overflow: hidden;
+  font-weight: 250;
+}
+html body main .glass-bg {
+  margin: 0px;
+}
+html body main .glass-bg input[name=task_adder] {
+  background: transparent;
+  outline: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+html body main .glass-bg input[name=task_adder]:focus {
+  box-shadow: none;
+  outline: none;
+}
+html body main .glass-bg #tasks {
+  padding-top: px;
+}
+html body main .glass-bg #tasks .task-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+html body main .glass-bg #tasks .task-item:not(:last-of-type) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+html body main .glass-bg #tasks .task-item .form-custom-control {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+html body main .glass-bg #tasks .task-item input {
+  background-color: skyblue;
+}/*# sourceMappingURL=style.css.map */

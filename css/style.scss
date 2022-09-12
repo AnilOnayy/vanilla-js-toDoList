@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:wght@100&display=swap');
+
+$mini_white: rgba(0,0,0,.15);
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    list-style:none;
+}
+.btn:focus{
+    box-shadow:none;
+    outline:none;
+}
+
+@mixin flex-column-all-center{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+@mixin flex-all-center{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+@mixin flex-horizontal-center{
+    display:flex;
+    justify-content: center;
+}
+
+html{
+    font-size:15px;
+    position:relative;
+    body{
+        font-family: 'Poppins', sans-serif;
+        background: #c0392b;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #8e44ad, #c0392b);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #8e44ad, #c0392b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        main{
+            padding-top:150px;
+            min-height:100vh;
+            @include flex-horizontal-center();
+            .bg-overlay-text{
+                position:absolute;
+                top:0;
+                text-align:center;
+                left:50%;
+                transform:translate(-50%,50%);
+                font-size:17rem;
+                opacity:.15;
+                z-index:-1;
+                color:white;
+                width:100%;
+                overflow:hidden;
+                font-weight:250;
+            }
+            .glass-bg{
+                margin:0px;
+                input[name=task_adder]{
+                    background:transparent;
+                    outline:none!important;
+                    border:1px solid $mini_white;
+                    &:focus{
+                       box-shadow:none;
+                       outline:none;
+                    }
+                }
+                #tasks{
+                    padding-top:px;
+                    .task-item{
+                        @include flex-all-center();
+                        padding:10px 0;
+                        &:not(:last-of-type){
+                            border-bottom:1px solid $mini_white;
+                        }
+                        .form-custom-control{
+                            background:transparent;
+                            border:none;
+                            padding:.5rem 1rem;
+                            width:100%;
+                        }
+                        input{
+                            background-color:skyblue;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
