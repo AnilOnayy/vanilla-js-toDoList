@@ -28,10 +28,10 @@ html body main {
 }
 html body main .bg-overlay-text {
   position: absolute;
-  top: 0;
+  top: 50%;
   text-align: center;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, -50%);
   font-size: 17rem;
   opacity: 0.15;
   z-index: -1;
@@ -43,33 +43,38 @@ html body main .bg-overlay-text {
 html body main .glass-bg {
   margin: 0px;
 }
-html body main .glass-bg input[name=task_adder] {
+html body main .glass-bg #taskAdderInput {
   background: transparent;
   outline: none !important;
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
-html body main .glass-bg input[name=task_adder]:focus {
+html body main .glass-bg #taskAdderInput:focus {
   box-shadow: none;
   outline: none;
 }
-html body main .glass-bg #tasks {
-  padding-top: px;
+html body main .glass-bg #taskList {
+  padding-top: 0px;
 }
-html body main .glass-bg #tasks .task-item {
+html body main .glass-bg #taskList .task-item {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 0;
 }
-html body main .glass-bg #tasks .task-item:not(:last-of-type) {
+html body main .glass-bg #taskList .task-item:not(:last-of-type) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
-html body main .glass-bg #tasks .task-item .form-custom-control {
+html body main .glass-bg #taskList .task-item .form-custom-control {
   background: transparent;
   border: none;
   padding: 0.5rem 1rem;
   width: 100%;
 }
-html body main .glass-bg #tasks .task-item input {
+html body main .glass-bg #taskList .task-item input {
   background-color: skyblue;
+}
+html body main .glass-bg #taskList .task-item i {
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 1rem;
 }/*# sourceMappingURL=style.css.map */

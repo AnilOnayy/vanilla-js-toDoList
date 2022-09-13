@@ -29,19 +29,23 @@
             
             </div>
 
-            <div class="mb-3">
-                <label for="" class="form-label text-white">Görev Ekle</label>
-                    <div class="input-area d-flex">
+            <div class="mb-3 w-100">
+                <label for="" class="form-label text-white">Add Task</label>
+                    <div class="input-area d-flex ">
+                      <form  class="input-area d-flex w-100">
+                        <input type="text" class="shadow form-control rounded-0" id="taskAdderInput">
+                        <button class="btn rounded-0 btn-success task_adder">+</button>
+                      </form>
 
-
-
-                        <input type="text" class=" shadow form-control rounded-0" name="task_adder"><button type="submit" class="btn rounded-0 btn-success task_adder">+</button>
                     </div>
             </div>
             <div class="glass-bg mx-auto card">
+              <div class="card-header d-flex justify-content-between">
+                <h3>Tasks</h3> <button class="btn btn-outline-danger" id="btnDeleteAll">Delete All</button>
+              </div>
                 <div class="card-body" class="p-0">
-                  <center class="empty-message"> Yapıcak bir görevin olmadığına inanıcak mıyız ?</center> 
-                    <ul id="tasks" class="ps-0 ms-0">
+                  <center class="empty-message">Do you believe you should do nothing?</center> 
+                    <ul id="taskList" class="ps-0 ms-0">
                     </ul>
                 </div>
             </div>
