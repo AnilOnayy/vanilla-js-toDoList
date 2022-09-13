@@ -1,3 +1,14 @@
+    
+    document.addEventListener('DOMContentLoaded', function () {
+    username = localStorage["username"];
+    if(!localStorage["tasks"]){
+        localStorage["tasks"] = "{}";
+    }
+  
+    })
+
+    
+    
     const task_adder = document.querySelector(".task_adder");
     const task_list = document.querySelector("ul#tasks");
    
@@ -30,6 +41,17 @@
             `;
         
             task_list.appendChild(li);    
+      
+
+            var tasks = JSON.parse(localStorage["tasks"]);
+            var task_group = {};
+            for(var i in tasks){
+                task_group.push(tasks[i]);
+            }
+
+            console.log(task_group);
+
+
 
         
             document.querySelector("input[name=task_adder]").value ="";
