@@ -1,4 +1,22 @@
-    const form = document.querySelector('form');
+    // Set the options that I want
+    toastr.options = {
+        "closeButton": true,
+        "newestOnTop": true,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+      };
+  
+ 
+ const form = document.querySelector('form');
     const input = document.querySelector("#taskAdderInput");
     const btnDeleteAll =document.querySelector("#btnDeleteAll");
     const taskList = document.querySelector("#taskList");
@@ -12,7 +30,6 @@
         taskList.addEventListener("click",deleteItem);
         btnDeleteAll.addEventListener("click",deleteAllTasks);
     }
-
     // Get Data From Local Storage
     function getItemsFromLS(){
         if(localStorage["items"]==null){
@@ -51,25 +68,36 @@
     // Create Task Item
     function createItem(text){
         var val = text;
-        const li = document.createElement("li");
-        li.className="task-item d-flex";
-        li.innerHTML=`<input type="text" class="form-custom-control me-3" name="task-" disabled="disabled" value="${val}">
-                      <i class="fa-regular fa-pen-to-square data-editor" data-editable="false"></i>
-                      <i class="fa-solid fa-trash text-danger"></i>
-        `;
-        taskList.appendChild(li);
-
+     
+      
+            const li = document.createElement("li");
+            li.className="task-item d-flex";
+            li.innerHTML=`<input type="text" class="form-custom-control me-3" name="task-" disabled="disabled" value="${val}">
+                          <i class="fa-regular fa-pen-to-square data-editor" data-editable="false"></i>
+                          <i class="fa-solid fa-trash text-danger"></i>
+            `;
+            taskList.appendChild(li);
+    
+      
+       
     }
     // Add New Task
     function addNewItem(e){
-        e.preventDefault();
+            e.preventDefault();
             var text = input.value;
             input.value="";
-            // Create Item
-             createItem(text);
-             // Save to local storage
-             setItemLS(text);
-    }
+            if(text==""){
+                toastr.error("Empty Task??");
+            }
+            else{
+                // Create Item
+                createItem(text);
+                // Save to local storage
+                setItemLS(text);
+                toastr.success("Task Added succesfully");
+                }
+        }
+           
     var old_text;
     // Delete Task
     function deleteItem(e){
@@ -150,3 +178,6 @@
         taskList.innerHTML="";
     }
     
+
+
+
