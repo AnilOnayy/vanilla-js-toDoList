@@ -16,7 +16,7 @@
       };
   
  
- const form = document.querySelector('form');
+    const form = document.querySelector('form');
     const input = document.querySelector("#taskAdderInput");
     const btnDeleteAll =document.querySelector("#btnDeleteAll");
     const taskList = document.querySelector("#taskList");
@@ -176,6 +176,8 @@
     // Delete All Tasks
     function deleteAllTasks(e){
         taskList.innerHTML="";
+        localStorage.clear();
+        toastr.info("Deleted All Tasks");
     }
     
 
