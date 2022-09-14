@@ -11,6 +11,12 @@
   outline: none;
 }
 
+.focus-input, .focus-input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  border-radius: 8px;
+  outline: none;
+}
+
 html {
   font-size: 15px;
   position: relative;
@@ -69,6 +75,7 @@ html body main .glass-bg #taskList .task-item .form-custom-control {
   border: none;
   padding: 0.5rem 1rem;
   width: 100%;
+  font-weight: 500;
 }
 html body main .glass-bg #taskList .task-item input {
   background-color: skyblue;

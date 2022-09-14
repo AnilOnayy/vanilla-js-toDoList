@@ -7,7 +7,6 @@
         loadItems();
         eventListeners();
   
-
     function eventListeners(){
         form.addEventListener('submit',addNewItem);
         taskList.addEventListener("click",deleteItem);
@@ -107,11 +106,15 @@
             e.className="fa-regular fa-pen-to-square data-editor";
             e.setAttribute("data-editor",false);
             e.parentElement.querySelector("input").setAttribute("disabled",true);
+            e.parentElement.querySelector("input").classList.remove("focus-input");
+            
+
         });
         // Chande editable our task
         item.className=" far fa-save text-warning data-editor";
         item.setAttribute("data-editor",true);
         input.setAttribute("disabled",false);
+        input.classList.add("focus-input");
 
         // Data Editable Control
         if(item.getAttribute("data-editable")=="false"){
@@ -136,13 +139,12 @@
         })
         e.setAttribute("data-editable",false);
         e.className="fa-regular fa-pen-to-square data-editor";
+        e.parentElement.querySelector("input").classList.remove("focus-input");
         localStorage["items"] = JSON.stringify(empty_items);
-
-       
-
-
-
     }
+
+
+
     // Delete All Tasks
     function deleteAllTasks(e){
         taskList.innerHTML="";
